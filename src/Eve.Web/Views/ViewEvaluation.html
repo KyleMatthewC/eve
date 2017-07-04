@@ -1,0 +1,289 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>View Evaluation</title>
+    <link href="../Content/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!--Nav Bar-->
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#eevie-navbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="UserHome.html">EEVIE LOGO</a>
+            </div>
+            <div id="eevie-navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="UserHome.html">
+                            <span class="glyphicon glyphicon-home"></span> Home
+                        </a>
+                    </li>
+                    <li class="logout">
+                        <a href="Signin.html">
+                            <span class="glyphicon glyphicon-log-out"></span> Logout
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav><!--end Nav Bar-->
+
+    <div class="container">
+        <!--Form-->
+        <form class="form-horizontal">
+            <h1 class="text-center">
+                Form Title
+            </h1>
+
+            <!--Information-->
+            <h3>
+                I. Introduction and Work Summary
+            </h3>
+
+            <div class="form-group">
+                <!--Name and Date-->
+                <label for="inputEmployeeName" class="col-xs-3 control-label">Employee Name</label>
+                <div class="col-xs-3">
+                    <input type="text" id="inputEmployeeName" class="form-control" placeholder="Employee Name" value="Sample" autofocus readonly>
+                </div>
+                <label for="evaluationDate" class="col-xs-3 control-label">Date of Evaluation</label>
+                <div class="col-xs-3">
+                    <input type="date" id="evaluationDate" class="form-control" placeholder="Date of Evaluation" value="2017-07-04" autofocus readonly>
+                </div>
+            </div><!--end Name and Date-->
+
+            <div class="form-group">
+                <!--Position and No of supervised-->
+                <label for="currentPosition" class="col-xs-3 control-label">Current Position</label>
+                <div class="col-xs-3">
+                    <input type="text" id="currentPosition" class="form-control" placeholder="Current Position" value="Sample" autofocus readonly>
+                </div>
+                <label for="noPersonnelSupervised" class="col-xs-3 control-label">No. of Personnel Supervised</label>
+                <div class="col-xs-2">
+                    <input type="number" id="noPersonnelSupervised" class="form-control" value="0" autofocus readonly>
+                </div>
+            </div><!--end Position and No of supervised-->
+
+            <div class="form-group">
+                <!--Evaluator and Group VP-->
+                <label for="supervisor" class="col-xs-3 control-label">Supervisor (Evaluator)</label>
+                <div class="col-xs-3">
+                    <input type="text" id="supervisor" class="form-control" placeholder="Evaluator" value="Sample" autofocus readonly>
+                </div>
+                <label for="groupVP" class="col-xs-3 control-label">Group Vice President</label>
+                <div class="col-xs-3">
+                    <input type="text" id="groupVP" class="form-control" placeholder="Vice president" value="Sample" autofocus readonly>
+                </div>
+            </div><!--end Evaluator and Group VP-->
+
+            <div class="form-group">
+                <textarea id="exampleTextarea" class="form-control" rows="3" placeholder="Briefly describe team’s objective and individual’s specific responsibilities. Also, identify any special considerations defining evaluator’s expectation level (e.g., complexity of role, etc.)." required autofocus readonly></textarea>
+            </div>
+            <!--end Information-->
+            <!--Evaluation-->
+            <h3>
+                II. Evaluation of Skills
+            </h3>
+
+            <!--Legend-->
+            <div>
+                <div><strong>Legend:</strong></div>
+                <div>1 - Exceeds expectations, 2 - Meets expectations, 3 - Needs improvement, X - No basis</div>
+            </div>
+
+            <br />
+
+            <div class="form-group">
+                <table class="table" border="1">
+                    <thead>
+                        <tr>
+                            <th class="col-xs-8"></th>
+                            <th class="col-xs-1">1</th>
+                            <th class="col-xs-1">2</th>
+                            <th class="col-xs-1">3</th>
+                            <th class="col-xs-1">X</th>
+                        </tr>
+                        <tr>
+                            <!--Category-->
+                            <th colspan=5><p class="text-uppercase text-center">Communication</p></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <!--Question-->
+                            <td>Consistently communicates work status and whereabouts</td>
+                            <td><input type="radio" name="cat1q1" value="1" disabled checked></td>
+                            <td><input type="radio" name="cat1q1" value="2" disabled></td>
+                            <td><input type="radio" name="cat1q1" value="3" disabled></td>
+                            <td><input type="radio" name="cat1q1" value="X" disabled></td>
+                        </tr>
+                        <tr>
+                            <!--Question-->
+                            <td>Proactively acquiants self with company and client personnel</td>
+                            <td><input type="radio" name="cat1q2" value="1" disabled checked></td>
+                            <td><input type="radio" name="cat1q2" value="2" disabled></td>
+                            <td><input type="radio" name="cat1q2" value="3" disabled></td>
+                            <td><input type="radio" name="cat1q2" value="X" disabled></td>
+                        </tr>
+                    </tbody>
+
+                    <thead>
+                        <tr>
+                            <!--Category-->
+                            <th colspan=5><p class="text-uppercase text-center">Analytical Ability</p></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <!--Question-->
+                            <td>Quickly identifies critical issues and relevant information</td>
+                            <td><input type="radio" name="cat2q1" value="1" disabled checked></td>
+                            <td><input type="radio" name="cat2q1" value="2" disabled></td>
+                            <td><input type="radio" name="cat2q1" value="3" disabled></td>
+                            <td><input type="radio" name="cat2q1" value="X" disabled></td>
+                        </tr>
+                        <tr>
+                            <!--Question-->
+                            <td>Adapts approach to fit specific projects and contents</td>
+                            <td><input type="radio" name="cat2q2" value="1" disabled checked></td>
+                            <td><input type="radio" name="cat2q2" value="2" disabled></td>
+                            <td><input type="radio" name="cat2q2" value="3" disabled></td>
+                            <td><input type="radio" name="cat2q2" value="X" disabled></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!--end Evaluation-->
+
+            </div>
+
+            <!--Results-->
+            <h3>
+                III. Evaluation of Results
+            </h3>
+
+            <div>
+                <div><strong>Legend:</strong></div>
+                <div>1 - Exceeds expectations, 2 - Meets expectations, 3 - Needs improvement, X - No basis</div>
+            </div>
+
+            <br />
+
+            <div class="form-group">
+                <table class="table" border="1">
+                    <thead>
+                        <tr>
+                            <th class="col-xs-8"></th>
+                            <th class="col-xs-1">1</th>
+                            <th class="col-xs-1">2</th>
+                            <th class="col-xs-1">3</th>
+                            <th class="col-xs-1">X</th>
+                        </tr>
+
+                        <tr>
+                            <th colspan=5><p class="text-uppercase text-center">Summary of Results in Area of REsponsibility for this Review Period</p></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <!--Question-->
+                        <tr>
+                            <td>Met quantitative targets or goals</td>
+                            <td><input type="radio" name="resultsq1" value="1" disabled checked></td>
+                            <td><input type="radio" name="resultsq1" value="2" disabled></td>
+                            <td><input type="radio" name="resultsq1" value="3" disabled></td>
+                            <td><input type="radio" name="resultsq1" value="X" disabled></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div><!--end Results-->
+            <!--Comments on Performance-->
+            <h3>
+                IV. Comments on Performance
+            </h3>
+
+            <p><strong>Identify the areas in which this individual's performance is above average or exceeds requirements.</strong></p>
+            <div class="form-group">
+                <textarea id="comment1" class="form-control" rows="3" value="Sample" readonly></textarea>
+            </div><br />
+
+            <p><strong>Describe the area(s) that this individual can improve upon and should focus on developing. If there are specific areas of concern or skills that require attention and improvement in the short term, please list, including parameters/deadlines.</strong></p>
+            <div class="form-group">
+                <textarea id="comment1" class="form-control" rows="3" value="Sample" readonly></textarea>
+            </div><br />
+            <!--end Comments on Performance-->
+            <!--Overall-->
+            <h3>
+                V. Overall Rating
+            </h3>
+            <br />
+
+            <h4>
+                The overall evaluation requires rating the employee on a scale of 1-3. In making ratings, please refer to your skills evaluation on the previous page.
+            </h4>
+
+            <div class="form-group">
+                <div class="col-xs-offset-5 col-xs-2">
+                    <input class="form-control input-lg" type="text" id="score" value="1" readonly />
+                    <div class="col-xs-offset-5"></div>
+                </div>
+            </div>
+
+            <h4>
+                The rating of a “2” indicates a level of performance expected of a Navitaire employee.
+            </h4>
+
+            <div class="form-group">
+                <table class="table">
+                    <tr>
+                        <td class="col-xs-4">
+                            1= Outstanding for Navitaire
+                            employees- uniformly excellent
+                            performance. A level of performance
+                            substantially above the normal
+                            competent performance for
+                            Navitaire employees.  Skills
+                            evaluated generally rated at
+                            “exceeds expectations.”
+                        </td>
+                        <td class="col-xs-4">
+                            2= The “norm” for Navitaire
+                            employees- competent performance.
+                            Skills evaluated generally rated at
+                            “meets expectations.”
+                        </td>
+                        <td class="col-xs-4">
+                            3= Below average for Navitaire
+                            employees.  Skills evaluated
+                            generally rated at “needs
+                            improvement.”
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <!--end Overall-->
+
+            <hr />
+
+            </form><!--TEMPORARILY, SHOULD BE AFTER BUTTONS-->
+
+            <!--Buttons-->
+            <div class="col-xs-offset-3">
+                <button class="col-xs-3 btn bt-lg btn-primary" onclick="location.href='EditEvaluation.html'">
+                    <span class="glyphicon glyphicon-edit"></span> Edit
+                </button>
+
+                <button class="col-xs-3 col-xs-offset-3 btn bt-lg btn-default" onclick="location.href='TemplateEvaluationSummary.html'">
+                    <span class="glyphicon glyphicon-circle-arrow-left"></span> Back
+                </button>
+            </div>
+            <br /><br />
+            <!--end Buttons-->
+    </div><!--end Form-->
+</body>
+</html>

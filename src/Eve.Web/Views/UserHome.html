@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title>Home</title>
+        <meta charset="utf-8" />
+        <link href="../Content/bootstrap.min.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <!--Nav Bar-->
+        <nav class="navbar navbar-default navbar-static-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#eevie-navbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="UserHome.html">EEVIE LOGO</a>
+                </div>
+                <div id="eevie-navbar"class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active">
+                            <a href="UserHome.html">
+                                <span class="glyphicon glyphicon-home"></span> Home
+                            </a>
+                        </li>
+                        <li class="logout">
+                            <a href="Signin.html">
+                                <span class="glyphicon glyphicon-log-out"></span> Logout
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav><!--Nav Bar-->
+
+        <!--My Templates-->
+        <div class="container">
+            <div id="mytemplates">
+               
+                <h1>My Templates</h1>
+                <button class="btn btn-lg btn-default" onclick="location.href='CreateEvaluationForm.html'">
+                    <span class="glyphicon glyphicon-file"></span> Create Template
+                </button>
+                <div>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Last Modified</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr style="cursor:pointer" onclick="location.href='TemplateEvaluationSummary.html'">
+                                <td>Sample template</td>
+                                <td>June 23, 2017</td>
+                                <td>
+                                    <button type="button" class="btn btn-default btn-sm" onclick="location.href='EditEvaluationForm.html'">
+                                        <span class="glyphicon glyphicon-edit"></span> Edit
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div><!--My Templates-->
+
+            <!--Other Templates-->
+            <div id="othertemplates">
+                <h1>Other Templates</h1>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Created By</th>
+                                <th>Last Modified</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr style="cursor:pointer" onclick="location.href='EvaluationFormPreview.html'">
+                                <td>Sample template</td>
+                                <td>Author</td>
+                                <td>June 23, 2017</td>
+                                <td>
+                                    <button type="button" class="btn btn-default btn-sm">
+                                        <span class="glyphicon glyphicon-floppy-save"></span> Save
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </div><!--Other Templates-->
+        </div>          
+    </body>
+</html>
