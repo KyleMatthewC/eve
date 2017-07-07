@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "CreateEvaluationForm";
+    Layout = null;
+}
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UACompatible" content="=" IE="edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/ie10-viewport-bug-workaround.css" rel="stylesheet" />
+    <link rel="icon" href="~/favicon.ico" />
+    <script src="~/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="~/js/ie-emulation-modes-warning.js"></script>
+
+    <title>Create Form</title>
+</head>
+<body>
+    <!--Navbar-->
+    @Html.Partial("../Shared/_InactiveNavbar")
+
+    <h1>Create Evaluation Form</h1>
+    <button onclick="@("window.location.href='" + @Url.Action("UserHome", "Home") + "'");">Back</button>
+</body>
+

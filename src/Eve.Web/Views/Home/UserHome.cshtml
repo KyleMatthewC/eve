@@ -1,0 +1,90 @@
+﻿
+@{
+    ViewBag.Title = "UserHome";
+    Layout = null;
+}
+<link href="../Content/bootstrap.min.css" rel="stylesheet">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UACompatible" content="=" IE="edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/ie10-viewport-bug-workaround.css" rel="stylesheet" />
+    <link rel="icon" href="~/favicon.ico" />
+    <script src="~/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="~/js/ie-emulation-modes-warning.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+
+    <title>Home</title>
+</head>
+
+<body>
+    <!--Navbar-->
+    @Html.Partial("../Shared/_HomeActiveNavbar")
+    @Html.Partial("../Shared/_EvaluationFormPreviewModal")
+    
+    <!--My Templates-->
+    <div class="container">
+        <div id="mytemplates">
+
+            <h1>My Templates</h1>
+            <button class="btn btn-lg btn-default" onclick="@("window.location.href='" + @Url.Action("CreateEvaluationForm", "CreateEvaluationForm") + "'");">
+                <span class="glyphicon glyphicon-file"></span> Create Template
+            </button>
+            <div>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Last Modified</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr style="cursor:pointer" onclick="@("window.location.href='" + @Url.Action("Summary", "TemplateEvaluationSummary") + "'");">
+                            <td>Sample template</td>
+                            <td>June 23, 2017</td>
+                            <td>
+                                <button type="button" class="btn btn-default btn-sm" onclick="@("window.location.href='" + @Url.Action("EditEvaluationForm", "EditEvaluationForm") + "'");">
+                                    <span class="glyphicon glyphicon-edit"></span> Edit
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div><!--My Templates-->
+
+        <!--Other Templates-->
+        <div id="othertemplates">
+            <h1>Other Templates</h1>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Created By</th>
+                        <th>Last Modified</th>
+                        <th></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr style="cursor:pointer" data-toggle="modal" data-target="#form-preview-number">
+                        <td>Sample template</td>
+                        <td>Author</td>
+                        <td>June 23, 2017</td>
+                        <td>
+                            <button type="button" class="btn btn-default btn-sm">
+                                <span class="glyphicon glyphicon-floppy-save"></span> Save
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div><!--Other Templates-->
+    </div>
+</body>
+

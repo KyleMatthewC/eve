@@ -1,38 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿
+@{
+    ViewBag.Title = "FillUpEvaluationForm";
+    Layout = null;
+}
+
 <head>
     <meta charset="utf-8">
-    <title>Form Preview</title>
-    <link href="../Content/bootstrap.min.css" rel="stylesheet">
+    <meta http-equiv="X-UACompatible" content="=" IE="edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/ie10-viewport-bug-workaround.css" rel="stylesheet" />
+    <link rel="icon" href="~/favicon.ico" />
+    <script src="~/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="~/js/ie-emulation-modes-warning.js"></script>
+
+    <title>Fill-up Form</title>
 </head>
 <body>
     <!--Nav Bar-->
-    <nav class="navbar navbar-default navbar-static-top">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#eevie-navbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="UserHome.html">EEVIE LOGO</a>
-            </div>
-            <div id="eevie-navbar" class="collapse navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="UserHome.html">
-                            <span class="glyphicon glyphicon-home"></span> Home
-                        </a>
-                    </li>
-                    <li class="logout">
-                        <a href="Signin.html">
-                            <span class="glyphicon glyphicon-log-out"></span> Logout
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav><!--end Nav Bar-->
+    @Html.Partial("../Shared/_InactiveNavbar")
 
     <div class="container">
         <!--Form-->
@@ -50,11 +36,11 @@
                 <!--Name and Date-->
                 <label for="inputEmployeeName" class="col-xs-3 control-label">Employee Name</label>
                 <div class="col-xs-3">
-                    <input type="text" id="inputEmployeeName" class="form-control" placeholder="Employee Name" autofocus disabled>
+                    <input type="text" id="inputEmployeeName" class="form-control" placeholder="Employee Name" required autofocus>
                 </div>
                 <label for="evaluationDate" class="col-xs-3 control-label">Date of Evaluation</label>
                 <div class="col-xs-3">
-                    <input type="date" id="evaluationDate" class="form-control" placeholder="Date of Evaluation" autofocus disabled>
+                    <input type="date" id="evaluationDate" class="form-control" placeholder="Date of Evaluation" required autofocus>
                 </div>
             </div><!--end Name and Date-->
 
@@ -62,11 +48,11 @@
                 <!--Position and No of supervised-->
                 <label for="currentPosition" class="col-xs-3 control-label">Current Position</label>
                 <div class="col-xs-3">
-                    <input type="text" id="currentPosition" class="form-control" placeholder="Current Position" autofocus disabled>
+                    <input type="text" id="currentPosition" class="form-control" placeholder="Current Position" required autofocus>
                 </div>
                 <label for="noPersonnelSupervised" class="col-xs-3 control-label">No. of Personnel Supervised</label>
                 <div class="col-xs-2">
-                    <input type="number" id="noPersonnelSupervised" class="form-control" autofocus disabled>
+                    <input type="number" id="noPersonnelSupervised" class="form-control" required autofocus>
                 </div>
             </div><!--end Position and No of supervised-->
 
@@ -74,16 +60,16 @@
                 <!--Evaluator and Group VP-->
                 <label for="supervisor" class="col-xs-3 control-label">Supervisor (Evaluator)</label>
                 <div class="col-xs-3">
-                    <input type="text" id="supervisor" class="form-control" placeholder="Evaluator" autofocus disabled>
+                    <input type="text" id="supervisor" class="form-control" placeholder="Evaluator" required autofocus>
                 </div>
                 <label for="groupVP" class="col-xs-3 control-label">Group Vice President</label>
                 <div class="col-xs-3">
-                    <input type="text" id="groupVP" class="form-control" placeholder="Vice president" autofocus disabled>
+                    <input type="text" id="groupVP" class="form-control" placeholder="Vice president" required autofocus>
                 </div>
             </div><!--end Evaluator and Group VP-->
 
             <div class="form-group">
-                <textarea id="exampleTextarea" class="form-control" rows="3" placeholder="Briefly describe team's objective and individual's specific responsibilities. Also, identify any special considerations defining evaluator's expectation level (e.g., complexity of role, etc.)." required autofocus disabled></textarea>
+                <textarea id="exampleTextarea" class="form-control" rows="3" placeholder="Briefly describe team’s objective and individual’s specific responsibilities. Also, identify any special considerations defining evaluator’s expectation level (e.g., complexity of role, etc.)." required autofocus></textarea>
             </div>
             <!--end Information-->
             <!--Evaluation-->
@@ -118,18 +104,18 @@
                         <tr>
                             <!--Question-->
                             <td>Consistently communicates work status and whereabouts</td>
-                            <td><input type="radio" name="cat1q1" value="1" disabled></td>
-                            <td><input type="radio" name="cat1q1" value="2" disabled></td>
-                            <td><input type="radio" name="cat1q1" value="3" disabled></td>
-                            <td><input type="radio" name="cat1q1" value="X" disabled></td>
+                            <td><input type="radio" name="cat1q1" value="1" required></td>
+                            <td><input type="radio" name="cat1q1" value="2"></td>
+                            <td><input type="radio" name="cat1q1" value="3"></td>
+                            <td><input type="radio" name="cat1q1" value="X"></td>
                         </tr>
                         <tr>
                             <!--Question-->
                             <td>Proactively acquiants self with company and client personnel</td>
-                            <td><input type="radio" name="cat1q2" value="1" disabled></td>
-                            <td><input type="radio" name="cat1q2" value="2" disabled></td>
-                            <td><input type="radio" name="cat1q2" value="3" disabled></td>
-                            <td><input type="radio" name="cat1q2" value="X" disabled></td>
+                            <td><input type="radio" name="cat1q2" value="1" required></td>
+                            <td><input type="radio" name="cat1q2" value="2"></td>
+                            <td><input type="radio" name="cat1q2" value="3"></td>
+                            <td><input type="radio" name="cat1q2" value="X"></td>
                         </tr>
                     </tbody>
 
@@ -143,18 +129,18 @@
                         <tr>
                             <!--Question-->
                             <td>Quickly identifies critical issues and relevant information</td>
-                            <td><input type="radio" name="cat2q1" value="1" disabled></td>
-                            <td><input type="radio" name="cat2q1" value="2" disabled></td>
-                            <td><input type="radio" name="cat2q1" value="3" disabled></td>
-                            <td><input type="radio" name="cat2q1" value="X" disabled></td>
+                            <td><input type="radio" name="cat2q1" value="1" required></td>
+                            <td><input type="radio" name="cat2q1" value="2"></td>
+                            <td><input type="radio" name="cat2q1" value="3"></td>
+                            <td><input type="radio" name="cat2q1" value="X"></td>
                         </tr>
                         <tr>
                             <!--Question-->
                             <td>Adapts approach to fit specific projects and contents</td>
-                            <td><input type="radio" name="cat2q2" value="1" disabled></td>
-                            <td><input type="radio" name="cat2q2" value="2" disabled></td>
-                            <td><input type="radio" name="cat2q2" value="3" disabled></td>
-                            <td><input type="radio" name="cat2q2" value="X" disabled></td>
+                            <td><input type="radio" name="cat2q2" value="1" required></td>
+                            <td><input type="radio" name="cat2q2" value="2"></td>
+                            <td><input type="radio" name="cat2q2" value="3"></td>
+                            <td><input type="radio" name="cat2q2" value="X"></td>
                         </tr>
                     </tbody>
                 </table>
@@ -194,10 +180,10 @@
                         <!--Question-->
                         <tr>
                             <td>Met quantitative targets or goals</td>
-                            <td><input type="radio" name="resultsq1" value="1" disabled></td>
-                            <td><input type="radio" name="resultsq1" value="2" disabled></td>
-                            <td><input type="radio" name="resultsq1" value="3" disabled></td>
-                            <td><input type="radio" name="resultsq1" value="X" disabled></td>
+                            <td><input type="radio" name="resultsq1" value="1" required></td>
+                            <td><input type="radio" name="resultsq1" value="2"></td>
+                            <td><input type="radio" name="resultsq1" value="3"></td>
+                            <td><input type="radio" name="resultsq1" value="X"></td>
                         </tr>
                     </tbody>
                 </table>
@@ -209,12 +195,12 @@
 
             <p><strong>Identify the areas in which this individual's performance is above average or exceeds requirements.</strong></p>
             <div class="form-group">
-                <textarea id="comment1" class="form-control" rows="3" value="Sample" disabled></textarea>
+                <textarea id="comment1" class="form-control" rows="3" required></textarea>
             </div><br />
 
             <p><strong>Describe the area(s) that this individual can improve upon and should focus on developing. If there are specific areas of concern or skills that require attention and improvement in the short term, please list, including parameters/deadlines.</strong></p>
             <div class="form-group">
-                <textarea id="comment1" class="form-control" rows="3" value="Sample" disabled></textarea>
+                <textarea id="comment1" class="form-control" rows="3" required></textarea>
             </div><br />
             <!--end Comments on Performance-->
             <!--Overall-->
@@ -229,13 +215,13 @@
 
             <div class="form-group">
                 <div class="col-xs-offset-5 col-xs-2">
-                    <input class="form-control input-lg" type="text" id="score" value="" disabled />
+                    <input class="form-control input-lg" type="text" id="score" value="" readonly />
                     <div class="col-xs-offset-5"></div>
                 </div>
             </div>
 
             <h4>
-                The rating of a "2" indicates a level of performance expected of a Navitaire employee.
+                The rating of a “2” indicates a level of performance expected of a Navitaire employee.
             </h4>
 
             <div class="form-group">
@@ -249,19 +235,19 @@
                             competent performance for
                             Navitaire employees.  Skills
                             evaluated generally rated at
-                            "exceeds expectations."
+                            “exceeds expectations.”
                         </td>
                         <td class="col-xs-4">
-                            2= The "norm" for Navitaire
+                            2= The “norm” for Navitaire
                             employees- competent performance.
                             Skills evaluated generally rated at
-                            "meets expectations."
+                            “meets expectations.”
                         </td>
                         <td class="col-xs-4">
                             3= Below average for Navitaire
                             employees.  Skills evaluated
-                            generally rated at "needs
-                            improvement."
+                            generally rated at “needs
+                            improvement.”
                         </td>
                     </tr>
                 </table>
@@ -270,21 +256,19 @@
 
             <hr />
 
-            </form><!--TEMPORARILY, SHOULD BE AFTER BUTTONS-->
+        </form><!--TEMPORARILY, SHOULD BE AFTER BUTTONS-->
+        <!--Buttons-->
+        <div class="col-xs-offset-3">
+            <button class="col-xs-3 btn bt-lg btn-primary">
+                <span class="glyphicon glyphicon-paste"></span> Submit
+            </button>
 
-            <!--Buttons-->
-            <div class="col-xs-offset-3">
-                <button class="col-xs-3 btn bt-lg btn-primary" onclick="location.href='UserHome.html'">
-                    <span class="glyphicon glyphicon-floppy-save"></span> Save As
-                </button>
-
-                <button class="col-xs-3 col-xs-offset-3 btn bt-lg btn-default" onclick="location.href='UserHome.html'">
-                    <span class="glyphicon glyphicon-circle-arrow-left"></span> Back
-                </button>
-            </div>
-            <br /><br />
-            <!--end Buttons-->
-
+            <button class="col-xs-3 col-xs-offset-3 btn bt-lg btn-default" onclick="@("window.location.href='" + @Url.Action("Summary", "TemplateEvaluationSummary") + "'");">
+                <span class="glyphicon glyphicon-circle-arrow-left"></span> Back
+            </button>
+        </div>
+        <br /><br />
+        <!--end Buttons-->
     </div><!--end Form-->
 </body>
-</html>
+
