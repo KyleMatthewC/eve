@@ -29,59 +29,69 @@
 
             <!--Information-->
             <h3>
-                I. Introduction and Work Summary
+                Introduction and Work Summary
             </h3>
 
             <div class="form-group">
                 <!--Name and Date-->
-                <label for="inputEmployeeName" class="col-xs-3 control-label">Employee Name</label>
+                <label for="reviewPeriod" class="col-xs-3 control-label">Review Period</label> <!--Make Dropdown (New Hire 3rd Month Review, New Hire 4th Month Review, Midyear Review, Year-End Review)-->
                 <div class="col-xs-3">
-                    <input type="text" id="inputEmployeeName" class="form-control" placeholder="Employee Name" required autofocus>
+                    <input type="date" id="reviewPeriod" class="form-control" placeholder="Review Period" required autofocus>
                 </div>
-                <label for="evaluationDate" class="col-xs-3 control-label">Date of Evaluation</label>
+
+                <label for="inputRevieweeName" class="col-xs-3 control-label">Reviewee's Name</label>
                 <div class="col-xs-3">
-                    <input type="date" id="evaluationDate" class="form-control" placeholder="Date of Evaluation" required autofocus>
-                </div>
+                    <input type="text" id="inputRevieweeName" class="form-control" placeholder="Reviewee's' Name" required autofocus>
+                </div>             
             </div><!--end Name and Date-->
 
             <div class="form-group">
-                <!--Position and No of supervised-->
+                <!--Position and Group-->
                 <label for="currentPosition" class="col-xs-3 control-label">Current Position</label>
                 <div class="col-xs-3">
                     <input type="text" id="currentPosition" class="form-control" placeholder="Current Position" required autofocus>
                 </div>
-                <label for="noPersonnelSupervised" class="col-xs-3 control-label">No. of Personnel Supervised</label>
-                <div class="col-xs-2">
-                    <input type="number" id="noPersonnelSupervised" class="form-control" required autofocus>
-                </div>
-            </div><!--end Position and No of supervised-->
 
-            <div class="form-group">
-                <!--Evaluator and Group VP-->
-                <label for="supervisor" class="col-xs-3 control-label">Supervisor (Evaluator)</label>
+                <label for="group" class="col-xs-3 control-label">Group/Team</label>
                 <div class="col-xs-3">
-                    <input type="text" id="supervisor" class="form-control" placeholder="Evaluator" required autofocus>
+                    <input type="text" id="group" class="form-control" placeholder="Group/Team" required autofocus>
                 </div>
-                <label for="groupVP" class="col-xs-3 control-label">Group Vice President</label>
-                <div class="col-xs-3">
-                    <input type="text" id="groupVP" class="form-control" placeholder="Vice president" required autofocus>
-                </div>
-            </div><!--end Evaluator and Group VP-->
-
-            <div class="form-group">
-                <textarea id="exampleTextarea" class="form-control" rows="3" placeholder="Briefly describe team’s objective and individual’s specific responsibilities. Also, identify any special considerations defining evaluator’s expectation level (e.g., complexity of role, etc.)." required autofocus></textarea>
-            </div>
+            </div><!--end Position and Group-->
             <!--end Information-->
-            <!--Evaluation-->
-            <h3>
-                II. Evaluation of Skills
-            </h3>
 
             <!--Legend-->
             <div>
-                <div><strong>Legend:</strong></div>
-                <div>1 - Exceeds expectations, 2 - Meets expectations, 3 - Needs improvement, X - No basis</div>
+                <table id="legend" class="table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th> 
+                            <th></th>
+                        </tr>     
+                        <tr>
+                            <th colspan="4">
+                                Rating Scale per Goal
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>4 - Exceeds Target</td>
+                            <td>3 - Within Target</td>
+                            <td>2 - Below Targer</td>
+                            <td>1 - Unsatisfactory</td>
+                            <td>0 - No Basis</td>
+                        </tr>
+                    </tbody>
+                 
+                </table>
             </div>
+            <!--Evaluation-->
+            <h3>
+                I. Results Leader
+            </h3>
 
             <br />
 
@@ -89,21 +99,26 @@
                 <table class="table" border="1">
                     <thead>
                         <tr>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        <tr>
                             <th class="col-xs-8"></th>
-                            <th class="col-xs-1">1</th>
-                            <th class="col-xs-1">2</th>
-                            <th class="col-xs-1">3</th>
-                            <th class="col-xs-1">X</th>
+                            <th class="col-xs-2" colspan="2">Self-Rating</th>
+                            <th class="col-xs-2" colspan="2">Supervisor's Rating</th>
                         </tr>
                         <tr>
                             <!--Category-->
-                            <th colspan=5><p class="text-uppercase text-center">Communication</p></th>
+                            <th colspan=5><p class="text-uppercase text-center">Accountability</p></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <!--Question-->
-                            <td>Consistently communicates work status and whereabouts</td>
+                            <td>Work on defined and standard tasks with occasional guidance from the lead.</td>
                             <td><input type="radio" name="cat1q1" value="1" required></td>
                             <td><input type="radio" name="cat1q1" value="2"></td>
                             <td><input type="radio" name="cat1q1" value="3"></td>
@@ -111,7 +126,7 @@
                         </tr>
                         <tr>
                             <!--Question-->
-                            <td>Proactively acquiants self with company and client personnel</td>
+                            <td>Can manage own workload by properly prioritizing tasks assigned, consult with lead when in doubt.</td>
                             <td><input type="radio" name="cat1q2" value="1" required></td>
                             <td><input type="radio" name="cat1q2" value="2"></td>
                             <td><input type="radio" name="cat1q2" value="3"></td>
@@ -122,7 +137,7 @@
                     <thead>
                         <tr>
                             <!--Category-->
-                            <th colspan=5><p class="text-uppercase text-center">Analytical Ability</p></th>
+                            <th colspan=5><p class="text-uppercase text-center">Business Acumen</p></th>
                         </tr>
                     </thead>
                     <tbody>
