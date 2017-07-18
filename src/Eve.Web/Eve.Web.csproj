@@ -21,4 +21,9 @@
   </ItemGroup>
 
 
+  <ItemGroup>
+    <ProjectReference Include="..\Eve\Eve.csproj" />
+  </ItemGroup>
+
+
 </Project>

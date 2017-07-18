@@ -36,36 +36,52 @@
 
             <div class="form-group">
                 <!--Name and Review Period-->
-                <label for="reviewPeriod" class="col-xs-3 control-label">Review Period</label> <!--Make Dropdown (New Hire 3rd Month Review, New Hire 4th Month Review, Midyear Review, Year-End Review)-->
-                <div class="dropdown col-xs-3">
-                    <button id="button-review-period"class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-                        Dropdown Example
-                        <span class="caret"></span>
-                    </button>
-                    <ul id="dropdown-review-period" class="dropdown-menu">
-                        <li>New Hire 3rd Month Review</a></li>
-                        <li>New Hire 4th Month Review</a></li>
-                        <li>Midyear Review</a></li>
-                        <li>Midyear Review</a></li>
-                    </ul>
-                </div>
-
                 <label for="inputRevieweeName" class="col-xs-3 control-label">Reviewee's Name</label>
                 <div class="col-xs-3">
                     <input type="text" id="inputRevieweeName" class="form-control" placeholder="Reviewee's' Name" required autofocus>
-                </div>             
-            </div><!--end Name and Date-->
+                </div>
+                
+                <label for="reviewPeriod" class="col-xs-3 control-label">Review Period</label> <!--Make Dropdown (New Hire 3rd Month Review, New Hire 4th Month Review, Midyear Review, Year-End Review)-->
+                <div class="dropdown col-xs-3">
+                    <button id="review-period" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                        Select Review Period
+                        <span class="caret"></span>
+                    </button>
+                    <ul id="dropdown-review-period" class="dropdown-menu" role="menu" aria-labelledby="review-period">
+                        <li role="presentation"><a role="menuitem">New Hire 3rd Month Review</a></li>
+                        <li role="presentation"><a role="menuitem">New Hire 4th Month Review</a></li>
+                        <li role="presentation"><a role="menuitem">Midyear Review</a></li>
+                        <li role="presentation"><a role="menuitem">Midyear Review</a></li>
+                    </ul>
+                </div>
+            </div><!--end Name and Review Period-->
 
             <div class="form-group">
                 <!--Position and Group-->
-                <label for="currentPosition" class="col-xs-3 control-label">Current Position</label>
-                <div class="col-xs-3">
-                    <input type="text" id="currentPosition" class="form-control" placeholder="Current Position" required autofocus>
-                </div>
-
                 <label for="group" class="col-xs-3 control-label">Group/Team</label>
                 <div class="col-xs-3">
                     <input type="text" id="group" class="form-control" placeholder="Group/Team" required autofocus>
+                </div>
+
+                <label for="currentPosition" class="col-xs-3 control-label">Current Position</label>
+                <div class="dropdown col-xs-3">
+                    <button id="position" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                        Select Position
+                        <span class="caret"></span>
+                    </button>
+                    <ul id="dropdown-position" class="dropdown-menu" role="menu" aria-labelledby="position">
+                        <li role="presentation"><a role="menuitem">12 - Individual Contributor</a></li>
+                        <li role="presentation"><a role="menuitem">11 - Individual Contributor</a></li>
+                        <li role="presentation"><a role="menuitem">10 - Individual Contributor</a></li>
+                        <li role="presentation"><a role="menuitem">9 - Individual Contributor</a></li>
+                        <li role="presentation"><a role="menuitem">9 - Team Lead</a></li>
+                        <li role="presentation"><a role="menuitem">8 - Sr. Developer</a></li>
+                        <li role="presentation"><a role="menuitem">8 - Sr. Team Lead</a></li>
+                        <li role="presentation"><a role="menuitem">8 - Jr. Architect</a></li>
+                        <li role="presentation"><a role="menuitem">7 - Manager</a></li>
+                        <li role="presentation"><a role="menuitem">7 - Architect/Manager</a></li>
+                        <li role="presentation"><a role="menuitem">7 - Architect</a></li>
+                    </ul>
                 </div>
             </div><!--end Position and Group-->
             <!--end Information-->
@@ -98,187 +114,265 @@
                     </tbody>
                  
                 </table>
-            </div>
+            </div><!--End Legend-->
+
             <!--Evaluation-->
             <h3>
-                I. Results Leader
+                I. Evaluation
             </h3>
-
-            <br />
+            <h4>
+                A. Results Leader
+            </h4>
 
             <div class="form-group">
-                <table class="table" border="1">
+                <table id="evaluation" class="table" border="1">
                     <thead>
                         <tr>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                        </tr>
-                        <tr>
-                            <th class="col-xs-8"></th>
-                            <th class="col-xs-2" colspan="2">Self-Rating</th>
-                            <th class="col-xs-2" colspan="2">Supervisor's Rating</th>
+                            <th class="col-xs-6"></th>
+                            <th class="col-xs-3"><p class="text-center">Self-Rating</p></th>
+                            <th class="col-xs-3"><p class="text-center">Supervisor's Rating</p></th>
                         </tr>
                         <tr>
                             <!--Category-->
-                            <th colspan=5><p class="text-uppercase text-center">Accountability</p></th>
+                            <th colspan=3><p class="text-uppercase text-center">Accountability</p></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <!--Question-->
                             <td>Work on defined and standard tasks with occasional guidance from the lead.</td>
-                            <td><input type="radio" name="cat1q1" value="1" required></td>
-                            <td><input type="radio" name="cat1q1" value="2"></td>
-                            <td><input type="radio" name="cat1q1" value="3"></td>
-                            <td><input type="radio" name="cat1q1" value="X"></td>
+                            <td><!--Self-->
+                                <label class="radio-inline">
+                                    <input type="radio" name="Self-ResultsLeader-Accountablity-1" value="4"> 4      
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="Self-ResultsLeader-Accountablity-1" value="3"> 3
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="Self-ResultsLeader-Accountablity-1" value="2"> 2
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="Self-ResultsLeader-Accountablity-1" value="1"> 1
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="Self-ResultsLeader-Accountablity-1" value="0"> 0
+                                </label>
+                            </td>
+
+                            <td><!--Supervisor-->
+                                <label class="radio-inline">
+                                    <input type="radio" name="Supervisor-ResultsLeader-Accountablity-1" value="4"> 4
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="Supervisor-ResultsLeader-Accountablity-1" value="3"> 3
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="Supervisor-ResultsLeader-Accountablity-1" value="2"> 2
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="Supervisor-ResultsLeader-Accountablity-1" value="1"> 1
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="Supervisor-ResultsLeader-Accountablity-1" value="0"> 0
+                                </label>
+                            </td>
+
                         </tr>
                         <tr>
                             <!--Question-->
                             <td>Can manage own workload by properly prioritizing tasks assigned, consult with lead when in doubt.</td>
-                            <td><input type="radio" name="cat1q2" value="1" required></td>
-                            <td><input type="radio" name="cat1q2" value="2"></td>
-                            <td><input type="radio" name="cat1q2" value="3"></td>
-                            <td><input type="radio" name="cat1q2" value="X"></td>
+                            <td><!--Self-->
+                                <label class="radio-inline">
+                                    <input type="radio" name="Self-ResultsLeader-Accountablity-2" value="4"> 4
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="Self-ResultsLeader-Accountablity-2" value="3"> 3
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="Self-ResultsLeader-Accountablity-2" value="2"> 2
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="Self-ResultsLeader-Accountablity-2" value="1"> 1
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="Self-ResultsLeader-Accountablity-2" value="0"> 0
+                                </label>
+                            </td>
+
+                            <td><!--Supervisor-->
+                                <label class="radio-inline">
+                                    <input type="radio" name="Supervisor-ResultsLeader-Accountablity-2" value="4"> 4
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="Supervisor-ResultsLeader-Accountablity-2" value="3"> 3
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="Supervisor-ResultsLeader-Accountablity-2" value="2"> 2
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="Supervisor-ResultsLeader-Accountablity-2" value="1"> 1
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="Supervisor-ResultsLeader-Accountablity-2" value="0"> 0
+                                </label>
+                            </td>
                         </tr>
                     </tbody>
 
                     <thead>
                         <tr>
                             <!--Category-->
-                            <th colspan=5><p class="text-uppercase text-center">Business Acumen</p></th>
+                            <th colspan=3><p class="text-uppercase text-center">Business Acumen</p></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <!--Question-->
                             <td>Quickly identifies critical issues and relevant information</td>
-                            <td><input type="radio" name="cat2q1" value="1" required></td>
-                            <td><input type="radio" name="cat2q1" value="2"></td>
-                            <td><input type="radio" name="cat2q1" value="3"></td>
-                            <td><input type="radio" name="cat2q1" value="X"></td>
+                            <td>
+                                <label class="radio-inline">
+                                    <input type="radio" name="Self-ResultsLeader-BusinessAcumen-1" value="4"> 4
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="Self-ResultsLeader-BusinessAcumen-1" value="3"> 3
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="Self-ResultsLeader-BusinessAcumen-1" value="2"> 2
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="Self-ResultsLeader-BusinessAcumen-1" value="1"> 1
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="Self-ResultsLeader-BusinessAcumen-1" value="0"> 0
+                                </label>
+                            </td>
+                            <td>
+                                <label class="radio-inline">
+                                    <input type="radio" name="Supervisor-ResultsLeader-BusinessAcumen-1" value="4"> 4
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="Supervisor-ResultsLeader-BusinessAcumen-1" value="3"> 3
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="Supervisor-ResultsLeader-BusinessAcumen-1" value="2"> 2
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="Supervisor-ResultsLeader-BusinessAcumen-1" value="1"> 1
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="Supervisor-ResultsLeader-BusinessAcumen-1" value="0"> 0
+                                </label>
+                            </td>
                         </tr>
                         <tr>
                             <!--Question-->
                             <td>Adapts approach to fit specific projects and contents</td>
-                            <td><input type="radio" name="cat2q2" value="1" required></td>
-                            <td><input type="radio" name="cat2q2" value="2"></td>
-                            <td><input type="radio" name="cat2q2" value="3"></td>
-                            <td><input type="radio" name="cat2q2" value="X"></td>
+                            <td>
+                                <label class="radio-inline">
+                                    <input type="radio" name="Self-ResultsLeader-BusinessAcumen-2" value="4"> 4
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="Self-ResultsLeader-BusinessAcumen-2" value="3"> 3
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="Self-ResultsLeader-BusinessAcumen-2" value="2"> 2
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="Self-ResultsLeader-BusinessAcumen-2" value="1"> 1
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="Self-ResultsLeader-BusinessAcumen-2" value="0"> 0
+                                </label>
+                            </td>
+                            <td>
+                                <label class="radio-inline">
+                                    <input type="radio" name="Supervisor-ResultsLeader-BusinessAcumen-2" value="4"> 4
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="Supervisor-ResultsLeader-BusinessAcumen-2" value="3"> 3
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="Supervisor-ResultsLeader-BusinessAcumen-2" value="2"> 2
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="Supervisor-ResultsLeader-BusinessAcumen-2" value="1"> 1
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="Supervisor-ResultsLeader-BusinessAcumen-2" value="0"> 0
+                                </label>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
                 <!--end Evaluation-->
-
             </div>
 
-            <!--Results-->
+            <!--Comments on Performance-->
             <h3>
-                III. Evaluation of Results
+                II. Comments
             </h3>
 
-            <div>
-                <div><strong>Legend:</strong></div>
-                <div>1 - Exceeds expectations, 2 - Meets expectations, 3 - Needs improvement, X - No basis</div>
+            <div class="form-group">
+                <textarea id="comment" class="form-control" rows="5" required></textarea>
             </div>
+            <!--end Comments on Performance-->
 
-            <br />
+            <!--Summary-->
+            <h3>
+                III. Summary of Results
+            </h3>
 
             <div class="form-group">
-                <table class="table" border="1">
+                <table id="table-summary" class="table" border="1">
                     <thead>
                         <tr>
-                            <th class="col-xs-8"></th>
-                            <th class="col-xs-1">1</th>
-                            <th class="col-xs-1">2</th>
-                            <th class="col-xs-1">3</th>
-                            <th class="col-xs-1">X</th>
+                            <th class="col-xs-5" rowspan="2"></th>
+                            <th class="col-xs-1" rowspan="2"><p class="text-center">Weight</p></th>
+                            <th class="col-xs-3" colspan="2"><p class="text-center">System</p></th>
+                            <th class="col-xs-3" colspan="2"><p class="text-center">Supervisor</p></th>
                         </tr>
-
                         <tr>
-                            <th colspan=5><p class="text-uppercase text-center">Summary of Results in Area of REsponsibility for this Review Period</p></th>
+                            <th><p class="text-center">Average</p></th>
+                            <th><p class="text-center">Computed</p></th>
+                            <th><p class="text-center">Average</p></th>
+                            <th><p class="text-center">Computed</p></th>
                         </tr>
                     </thead>
-
+                    
                     <tbody>
-                        <!--Question-->
                         <tr>
-                            <td>Met quantitative targets or goals</td>
-                            <td><input type="radio" name="resultsq1" value="1" required></td>
-                            <td><input type="radio" name="resultsq1" value="2"></td>
-                            <td><input type="radio" name="resultsq1" value="3"></td>
-                            <td><input type="radio" name="resultsq1" value="X"></td>
+                            <td>Results Leader</td>
+                            <td>40%</td>
+                        </tr>
+                        <tr>
+                            <td>People Leader</td>
+                            <td>20%</td>
+                        </tr>
+                        <tr>
+                            <td>Thought Leader</td>
+                            <td>30%</td>
+                        </tr>
+                        <tr>
+                            <td>Developmental Goals</td>
+                            <td>10%</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>100%</td>
+                            <td></td>
+                            <td>Score</td>
+                            <td></td>
+                            <td>Score</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"></td>
+                            <td colspan="2">Rating</td>
+                            <td colspan="2">Rating</td>
                         </tr>
                     </tbody>
                 </table>
-            </div><!--end Results-->
-            <!--Comments on Performance-->
-            <h3>
-                IV. Comments on Performance
-            </h3>
-
-            <p><strong>Identify the areas in which this individual's performance is above average or exceeds requirements.</strong></p>
-            <div class="form-group">
-                <textarea id="comment1" class="form-control" rows="3" required></textarea>
-            </div><br />
-
-            <p><strong>Describe the area(s) that this individual can improve upon and should focus on developing. If there are specific areas of concern or skills that require attention and improvement in the short term, please list, including parameters/deadlines.</strong></p>
-            <div class="form-group">
-                <textarea id="comment1" class="form-control" rows="3" required></textarea>
-            </div><br />
-            <!--end Comments on Performance-->
-            <!--Overall-->
-            <h3>
-                V. Overall Rating
-            </h3>
-            <br />
-
-            <h4>
-                The overall evaluation requires rating the employee on a scale of 1-3. In making ratings, please refer to your skills evaluation on the previous page.
-            </h4>
-
-            <div class="form-group">
-                <div class="col-xs-offset-5 col-xs-2">
-                    <input class="form-control input-lg" type="text" id="score" value="" readonly />
-                    <div class="col-xs-offset-5"></div>
-                </div>
             </div>
-
-            <h4>
-                The rating of a “2” indicates a level of performance expected of a Navitaire employee.
-            </h4>
-
-            <div class="form-group">
-                <table class="table">
-                    <tr>
-                        <td class="col-xs-4">
-                            1= Outstanding for Navitaire
-                            employees- uniformly excellent
-                            performance. A level of performance
-                            substantially above the normal
-                            competent performance for
-                            Navitaire employees.  Skills
-                            evaluated generally rated at
-                            “exceeds expectations.”
-                        </td>
-                        <td class="col-xs-4">
-                            2= The “norm” for Navitaire
-                            employees- competent performance.
-                            Skills evaluated generally rated at
-                            “meets expectations.”
-                        </td>
-                        <td class="col-xs-4">
-                            3= Below average for Navitaire
-                            employees.  Skills evaluated
-                            generally rated at “needs
-                            improvement.”
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <!--end Overall-->
+            <!--end Summary-->
 
             <hr />
 
