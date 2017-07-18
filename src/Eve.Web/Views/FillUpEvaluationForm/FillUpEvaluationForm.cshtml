@@ -13,6 +13,8 @@
     <link rel="icon" href="~/favicon.ico" />
     <script src="~/js/ie10-viewport-bug-workaround.js"></script>
     <script src="~/js/ie-emulation-modes-warning.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <title>Fill-up Form</title>
 </head>
@@ -33,10 +35,19 @@
             </h3>
 
             <div class="form-group">
-                <!--Name and Date-->
+                <!--Name and Review Period-->
                 <label for="reviewPeriod" class="col-xs-3 control-label">Review Period</label> <!--Make Dropdown (New Hire 3rd Month Review, New Hire 4th Month Review, Midyear Review, Year-End Review)-->
-                <div class="col-xs-3">
-                    <input type="date" id="reviewPeriod" class="form-control" placeholder="Review Period" required autofocus>
+                <div class="dropdown col-xs-3">
+                    <button id="button-review-period"class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                        Dropdown Example
+                        <span class="caret"></span>
+                    </button>
+                    <ul id="dropdown-review-period" class="dropdown-menu">
+                        <li>New Hire 3rd Month Review</a></li>
+                        <li>New Hire 4th Month Review</a></li>
+                        <li>Midyear Review</a></li>
+                        <li>Midyear Review</a></li>
+                    </ul>
                 </div>
 
                 <label for="inputRevieweeName" class="col-xs-3 control-label">Reviewee's Name</label>
