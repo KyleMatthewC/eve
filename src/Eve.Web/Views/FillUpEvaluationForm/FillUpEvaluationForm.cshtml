@@ -48,10 +48,10 @@
                         <span class="caret"></span>
                     </button>
                     <ul id="dropdown-review-period" class="dropdown-menu" role="menu" aria-labelledby="review-period">
-                        <li role="presentation"><a role="menuitem">New Hire 3rd Month Review</a></li>
-                        <li role="presentation"><a role="menuitem">New Hire 4th Month Review</a></li>
-                        <li role="presentation"><a role="menuitem">Midyear Review</a></li>
-                        <li role="presentation"><a role="menuitem">Midyear Review</a></li>
+                        <li role="presentation" style="cursor:pointer"><a role="menuitem">New Hire 3rd Month Review</a></li>
+                        <li role="presentation" style="cursor:pointer"><a role="menuitem">New Hire 4th Month Review</a></li>
+                        <li role="presentation" style="cursor:pointer"><a role="menuitem">Midyear Review</a></li>
+                        <li role="presentation" style="cursor:pointer"><a role="menuitem">Year-end Review</a></li>
                     </ul>
                 </div>
             </div><!--end Name and Review Period-->
@@ -70,17 +70,17 @@
                         <span class="caret"></span>
                     </button>
                     <ul id="dropdown-position" class="dropdown-menu" role="menu" aria-labelledby="position">
-                        <li role="presentation"><a role="menuitem">12 - Individual Contributor</a></li>
-                        <li role="presentation"><a role="menuitem">11 - Individual Contributor</a></li>
-                        <li role="presentation"><a role="menuitem">10 - Individual Contributor</a></li>
-                        <li role="presentation"><a role="menuitem">9 - Individual Contributor</a></li>
-                        <li role="presentation"><a role="menuitem">9 - Team Lead</a></li>
-                        <li role="presentation"><a role="menuitem">8 - Sr. Developer</a></li>
-                        <li role="presentation"><a role="menuitem">8 - Sr. Team Lead</a></li>
-                        <li role="presentation"><a role="menuitem">8 - Jr. Architect</a></li>
-                        <li role="presentation"><a role="menuitem">7 - Manager</a></li>
-                        <li role="presentation"><a role="menuitem">7 - Architect/Manager</a></li>
-                        <li role="presentation"><a role="menuitem">7 - Architect</a></li>
+                        <li role="presentation" style="cursor:pointer"><a role="menuitem">12 - Individual Contributor</a></li>
+                        <li role="presentation" style="cursor:pointer"><a role="menuitem">11 - Individual Contributor</a></li>
+                        <li role="presentation" style="cursor:pointer"><a role="menuitem">10 - Individual Contributor</a></li>
+                        <li role="presentation" style="cursor:pointer"><a role="menuitem">9 - Individual Contributor</a></li>
+                        <li role="presentation" style="cursor:pointer"><a role="menuitem">9 - Team Lead</a></li>
+                        <li role="presentation" style="cursor:pointer"><a role="menuitem">8 - Sr. Developer</a></li>
+                        <li role="presentation" style="cursor:pointer"><a role="menuitem">8 - Sr. Team Lead</a></li>
+                        <li role="presentation" style="cursor:pointer"><a role="menuitem">8 - Jr. Architect</a></li>
+                        <li role="presentation" style="cursor:pointer"><a role="menuitem">7 - Manager</a></li>
+                        <li role="presentation" style="cursor:pointer"><a role="menuitem">7 - Architect/Manager</a></li>
+                        <li role="presentation" style="cursor:pointer"><a role="menuitem">7 - Architect</a></li>
                     </ul>
                 </div>
             </div><!--end Position and Group-->
@@ -128,178 +128,62 @@
                 <table id="evaluation" class="table" border="1">
                     <thead>
                         <tr>
-                            <th class="col-xs-6"></th>
-                            <th class="col-xs-3"><p class="text-center">Self-Rating</p></th>
-                            <th class="col-xs-3"><p class="text-center">Supervisor's Rating</p></th>
+                            <th class="col-xs-6" rowspan="2"></th>
+                            <th class="col-xs-3" colspan="5"><p class="text-center">Self-Rating</p></th>
+                            <th class="col-xs-3" colspan="5"><p class="text-center">Supervisor's Rating</p></th>
+                        </tr>
+                        <tr>
+                            <th><p class="text-center">4</p></th>
+                            <th><p class="text-center">3</p></th>
+                            <th><p class="text-center">2</p></th>
+                            <th><p class="text-center">1</p></th>
+                            <th><p class="text-center">0</p></th>
+                            <th><p class="text-center">4</p></th>
+                            <th><p class="text-center">3</p></th>
+                            <th><p class="text-center">2</p></th>
+                            <th><p class="text-center">1</p></th>
+                            <th><p class="text-center">0</p></th>
                         </tr>
                         <tr>
                             <!--Category-->
-                            <th colspan=3><p class="text-uppercase text-center">Accountability</p></th>
+                            <th colspan="11"><p class="text-uppercase text-center">Accountability</p></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <!--Question-->
                             <td>Work on defined and standard tasks with occasional guidance from the lead.</td>
-                            <td><!--Self-->
-                                <label class="radio-inline">
-                                    <input type="radio" name="Self-ResultsLeader-Accountablity-1" value="4"> 4      
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="Self-ResultsLeader-Accountablity-1" value="3"> 3
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="Self-ResultsLeader-Accountablity-1" value="2"> 2
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="Self-ResultsLeader-Accountablity-1" value="1"> 1
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="Self-ResultsLeader-Accountablity-1" value="0"> 0
-                                </label>
+                            <!--Self-->
+                            <td style="vertical-align: middle;">
+                                <p class="text-center"><input type="radio" name="Self-ResultsLeader-Accountablity-1" value="4"></p>
+                            </td>
+                            <td style="vertical-align: middle;">
+                                <p class="text-center"><input type="radio" name="Self-ResultsLeader-Accountablity-1" value="3"></p>
+                            </td>
+                            <td style="vertical-align: middle;">
+                                <p class="text-center"><input type="radio" name="Self-ResultsLeader-Accountablity-1" value="2"></p>
+                            </td>
+                            <td style="vertical-align: middle;">
+                                <p class="text-center"><input type="radio" name="Self-ResultsLeader-Accountablity-1" value="1"></p>
+                            </td>
+                            <td style="vertical-align: middle;">
+                                <p class="text-center"><input type="radio" name="Self-ResultsLeader-Accountablity-1" value="0"></p>
                             </td>
 
-                            <td><!--Supervisor-->
-                                <label class="radio-inline">
-                                    <input type="radio" name="Supervisor-ResultsLeader-Accountablity-1" value="4"> 4
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="Supervisor-ResultsLeader-Accountablity-1" value="3"> 3
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="Supervisor-ResultsLeader-Accountablity-1" value="2"> 2
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="Supervisor-ResultsLeader-Accountablity-1" value="1"> 1
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="Supervisor-ResultsLeader-Accountablity-1" value="0"> 0
-                                </label>
+                            <td style="vertical-align: middle;"><!--Supervisor-->
+                                <p class="text-center"><input type="radio" name="Supervisor-ResultsLeader-Accountablity-1" value="4"></p>
                             </td>
-
-                        </tr>
-                        <tr>
-                            <!--Question-->
-                            <td>Can manage own workload by properly prioritizing tasks assigned, consult with lead when in doubt.</td>
-                            <td><!--Self-->
-                                <label class="radio-inline">
-                                    <input type="radio" name="Self-ResultsLeader-Accountablity-2" value="4"> 4
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="Self-ResultsLeader-Accountablity-2" value="3"> 3
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="Self-ResultsLeader-Accountablity-2" value="2"> 2
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="Self-ResultsLeader-Accountablity-2" value="1"> 1
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="Self-ResultsLeader-Accountablity-2" value="0"> 0
-                                </label>
+                            <td style="vertical-align: middle;">
+                                <p class="text-center"><input type="radio" name="Supervisor-ResultsLeader-Accountablity-1" value="3"></p>
                             </td>
-
-                            <td><!--Supervisor-->
-                                <label class="radio-inline">
-                                    <input type="radio" name="Supervisor-ResultsLeader-Accountablity-2" value="4"> 4
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="Supervisor-ResultsLeader-Accountablity-2" value="3"> 3
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="Supervisor-ResultsLeader-Accountablity-2" value="2"> 2
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="Supervisor-ResultsLeader-Accountablity-2" value="1"> 1
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="Supervisor-ResultsLeader-Accountablity-2" value="0"> 0
-                                </label>
+                            <td style="vertical-align: middle;">
+                                <p class="text-center"><input type="radio" name="Supervisor-ResultsLeader-Accountablity-1" value="2"></p>
                             </td>
-                        </tr>
-                    </tbody>
-
-                    <thead>
-                        <tr>
-                            <!--Category-->
-                            <th colspan=3><p class="text-uppercase text-center">Business Acumen</p></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <!--Question-->
-                            <td>Quickly identifies critical issues and relevant information</td>
-                            <td>
-                                <label class="radio-inline">
-                                    <input type="radio" name="Self-ResultsLeader-BusinessAcumen-1" value="4"> 4
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="Self-ResultsLeader-BusinessAcumen-1" value="3"> 3
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="Self-ResultsLeader-BusinessAcumen-1" value="2"> 2
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="Self-ResultsLeader-BusinessAcumen-1" value="1"> 1
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="Self-ResultsLeader-BusinessAcumen-1" value="0"> 0
-                                </label>
+                            <td style="vertical-align: middle;">
+                                <p class="text-center"><input type="radio" name="Supervisor-ResultsLeader-Accountablity-1" value="1"></p>
                             </td>
-                            <td>
-                                <label class="radio-inline">
-                                    <input type="radio" name="Supervisor-ResultsLeader-BusinessAcumen-1" value="4"> 4
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="Supervisor-ResultsLeader-BusinessAcumen-1" value="3"> 3
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="Supervisor-ResultsLeader-BusinessAcumen-1" value="2"> 2
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="Supervisor-ResultsLeader-BusinessAcumen-1" value="1"> 1
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="Supervisor-ResultsLeader-BusinessAcumen-1" value="0"> 0
-                                </label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <!--Question-->
-                            <td>Adapts approach to fit specific projects and contents</td>
-                            <td>
-                                <label class="radio-inline">
-                                    <input type="radio" name="Self-ResultsLeader-BusinessAcumen-2" value="4"> 4
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="Self-ResultsLeader-BusinessAcumen-2" value="3"> 3
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="Self-ResultsLeader-BusinessAcumen-2" value="2"> 2
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="Self-ResultsLeader-BusinessAcumen-2" value="1"> 1
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="Self-ResultsLeader-BusinessAcumen-2" value="0"> 0
-                                </label>
-                            </td>
-                            <td>
-                                <label class="radio-inline">
-                                    <input type="radio" name="Supervisor-ResultsLeader-BusinessAcumen-2" value="4"> 4
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="Supervisor-ResultsLeader-BusinessAcumen-2" value="3"> 3
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="Supervisor-ResultsLeader-BusinessAcumen-2" value="2"> 2
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="Supervisor-ResultsLeader-BusinessAcumen-2" value="1"> 1
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="Supervisor-ResultsLeader-BusinessAcumen-2" value="0"> 0
-                                </label>
+                            <td style="vertical-align: middle;">
+                                <p class="text-center"><input type="radio" name="Supervisor-ResultsLeader-Accountablity-1" value="0"></p>
                             </td>
                         </tr>
                     </tbody>
@@ -307,29 +191,20 @@
                 <!--end Evaluation-->
             </div>
 
-            <!--Comments on Performance-->
-            <h3>
-                II. Comments
-            </h3>
-
-            <div class="form-group">
-                <textarea id="comment" class="form-control" rows="5" required></textarea>
-            </div>
-            <!--end Comments on Performance-->
-
             <!--Summary-->
             <h3>
-                III. Summary of Results
+                II. Summary of Results
             </h3>
 
             <div class="form-group">
                 <table id="table-summary" class="table" border="1">
                     <thead>
                         <tr>
-                            <th class="col-xs-5" rowspan="2"></th>
-                            <th class="col-xs-1" rowspan="2"><p class="text-center">Weight</p></th>
+                            <th class="col-xs-2" rowspan="2"></th>
+                            <th class="col-xs-1" rowspan="2" style="vertical-align: middle;"><p class="text-center">Weight</p></th>
                             <th class="col-xs-3" colspan="2"><p class="text-center">System</p></th>
                             <th class="col-xs-3" colspan="2"><p class="text-center">Supervisor</p></th>
+                            <th class="col-xs-3" rowspan="2" style="vertical-align: middle;"><p class="text-center">Remarks</p></th>
                         </tr>
                         <tr>
                             <th><p class="text-center">Average</p></th>
@@ -341,33 +216,59 @@
                     
                     <tbody>
                         <tr>
-                            <td>Results Leader</td>
-                            <td>40%</td>
+                            <td style="vertical-align: middle;">Results Leader</td>
+                            <td style="vertical-align: middle;"><p class="text-center">40%</p></td>
+                            <td style="vertical-align: middle;"></td>
+                            <td style="vertical-align: middle;"></td>
+                            <td style="vertical-align: middle;"></td>
+                            <td style="vertical-align: middle;"></td>
+                            <td>
+                                <textarea id="comment-ResultsLeader" class="form-control" rows="5" style="resize:none"></textarea>
+                            </td>
                         </tr>
                         <tr>
-                            <td>People Leader</td>
-                            <td>20%</td>
+                            <td style="vertical-align: middle;">People Leader</td>
+                            <td style="vertical-align: middle;"><p class="text-center">20%</p></td>
+                            <td style="vertical-align: middle;"></td>
+                            <td style="vertical-align: middle;"></td>
+                            <td style="vertical-align: middle;"></td>
+                            <td style="vertical-align: middle;"></td>
+                            <td>
+                                <textarea id="comment-PeopleLeader" class="form-control" rows="5" style="resize:none"></textarea>
+                            </td>
                         </tr>
                         <tr>
-                            <td>Thought Leader</td>
-                            <td>30%</td>
+                            <td style="vertical-align: middle;">Thought Leader</td>
+                            <td style="vertical-align: middle;"><p class="text-center">30%</p></td>
+                            <td style="vertical-align: middle;"></td>
+                            <td style="vertical-align: middle;"></td>
+                            <td style="vertical-align: middle;"></td>
+                            <td style="vertical-align: middle;"></td>
+                            <td>
+                                <textarea id="comment-ThoughLeader" class="form-control" rows="5" style="resize:none"></textarea>
+                            </td>
                         </tr>
                         <tr>
-                            <td>Developmental Goals</td>
-                            <td>10%</td>
+                            <td style="vertical-align: middle;">Developmental Goals</td>
+                            <td style="vertical-align: middle;"><p class="text-center">10%</p></td>
+                            <td style="vertical-align: middle;"></td>
+                            <td style="vertical-align: middle;"></td>
+                            <td style="vertical-align: middle;"></td>
+                            <td style="vertical-align: middle;"></td>
+                            <td style="vertical-align: middle;">
+                                <textarea id="comment-DevelopmentalGoals" class="form-control" rows="5" style="resize:none"></textarea>
+                            </td>
                         </tr>
                         <tr>
                             <td></td>
-                            <td>100%</td>
-                            <td></td>
-                            <td>Score</td>
-                            <td></td>
-                            <td>Score</td>
+                            <td><p class="text-center">100%</p></td>
+                            <td colspan="2"><p class="text-right">Score</p></td>
+                            <td colspan="2"><p class="text-right">Score</p></td>
                         </tr>
                         <tr>
                             <td colspan="2"></td>
-                            <td colspan="2">Rating</td>
-                            <td colspan="2">Rating</td>
+                            <td colspan="2"><p class="text-right">Rating</p></td>
+                            <td colspan="2"><p class="text-right">Rating</p></td>
                         </tr>
                     </tbody>
                 </table>
