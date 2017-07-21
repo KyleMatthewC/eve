@@ -85,6 +85,13 @@
                 </tbody>
             </table>
         </div><!--Other Templates-->
+        @{
+            @using Eve;
+
+            Storage storage = new Storage();
+            string message = storage.GetMessage(new Criteria(SpecificRole.Accountability, TeamRole.IndividualContributor12));
+        }
+        <h1>@message</h1>
     </div>
 </body>
 

@@ -6,24 +6,24 @@ namespace Eve
 {
     public class CriteriaMap
     {
-        private Dictionary<Criteria, string> criteriaDict = new Dictionary<Criteria, string>();
+        private Dictionary<Criteria, List<LineResponse>> criteriaDict;
 
         public CriteriaMap()
         {
-            criteriaDict = new Dictionary<Criteria, string>();
+            criteriaDict = new Dictionary<Criteria, List<LineResponse>>();
         }
 
-        public void AddCriteriaMessage(Criteria criteria, string message)
+        public void AddCriteriaMessage(Criteria criteria, List<LineResponse> responce)
         {
-            criteriaDict.Add(criteria, message);
+            criteriaDict.Add(criteria, responce);
         }
 
-        public string GetCriteriaMessage(Criteria criteria)
+        public List<LineResponse> GetCriteriaResponce(Criteria criteria)
         {
-            string message;
-            if (criteriaDict.TryGetValue(criteria, out message))
+            List<LineResponse> responce;
+            if (criteriaDict.TryGetValue(criteria, out responce))
             {
-                return message;
+                return responce;
             }
             return null;
         }
