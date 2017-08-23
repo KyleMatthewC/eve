@@ -1,0 +1,94 @@
+﻿@using Eve.Web.ViewModels
+@model PartialEvaluationFormViewModel
+
+<h3>
+    I. Evaluation
+</h3>
+
+<form>
+    @{ int criteriaNo = 0; }
+        @foreach (var criteriaAttribute in Model.CriteriaAttribute)
+        {
+            criteriaNo++;
+
+            <h4>
+                @criteriaNo. @criteriaAttribute.criteria.criteriaTitle
+            </h4>
+
+            <div class="form-group">
+                <table id="evaluation" class="table" border="1">
+                    <thead>
+                        <tr>
+                            <th class="col-xs-6" rowspan="2"></th>
+                            <th class="col-xs-3" colspan="5"><p class="text-center">Self-Rating</p></th>
+                            <th class="col-xs-3" colspan="5"><p class="text-center">Supervisor's Rating</p></th>
+                        </tr>
+                        <tr>
+                            <th><p class="text-center">4</p></th>
+                            <th><p class="text-center">3</p></th>
+                            <th><p class="text-center">2</p></th>
+                            <th><p class="text-center">1</p></th>
+                            <th><p class="text-center">0</p></th>
+                            <th><p class="text-center">4</p></th>
+                            <th><p class="text-center">3</p></th>
+                            <th><p class="text-center">2</p></th>
+                            <th><p class="text-center">1</p></th>
+                            <th><p class="text-center">0</p></th>
+                        </tr>
+                    </thead>
+                    @foreach (var attributeItem in @criteriaAttribute.attributeItems)
+                    {
+                        <thead>
+                            <tr>
+                                <!--Category-->
+                                <th colspan="11"><p class="text-uppercase text-center">@attributeItem.attribute.attributeTitle</p></th>
+                            </tr>
+                        </thead>
+                        @foreach (var item in @attributeItem.items)
+                        {
+                            <tbody>
+                                <tr>
+                                    <!--Question-->
+                                    <td>@item.item</td>
+                                    <!--Self-->
+                                    <td style="vertical-align: middle;">
+                                        <p class="text-center"><input type="radio" name="Self-@item.itemID" value="4" required></p>
+                                    </td>
+                                    <td style="vertical-align: middle;">
+                                        <p class="text-center"><input type="radio" name="Self-@item.itemID" value="3"></p>
+                                    </td>
+                                    <td style="vertical-align: middle;">
+                                        <p class="text-center"><input type="radio" name="Self-@item.itemID" value="2"></p>
+                                    </td>
+                                    <td style="vertical-align: middle;">
+                                        <p class="text-center"><input type="radio" name="Self-@item.itemID" value="1"></p>
+                                    </td>
+                                    <td style="vertical-align: middle;">
+                                        <p class="text-center"><input type="radio" name="Self-@item.itemID" value="0"></p>
+                                    </td>
+
+                                    <td style="vertical-align: middle;">
+                                        <!--Supervisor-->
+                                        <p class="text-center"><input type="radio" name="Supervisor-@item.itemID" value="4" required></p>
+                                    </td>
+                                    <td style="vertical-align: middle;">
+                                        <p class="text-center"><input type="radio" name="Supervisor-@item.itemID" value="3"></p>
+                                    </td>
+                                    <td style="vertical-align: middle;">
+                                        <p class="text-center"><input type="radio" name="Supervisor-@item.itemID" value="2"></p>
+                                    </td>
+                                    <td style="vertical-align: middle;">
+                                        <p class="text-center"><input type="radio" name="Supervisor-@item.itemID" value="1"></p>
+                                    </td>
+                                    <td style="vertical-align: middle;">
+                                        <p class="text-center"><input type="radio" name="Supervisor-@item.itemID" value="0"></p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        }
+                    }
+                </table>
+                <!--end Evaluation-->
+            </div>
+        }
+</form>    
