@@ -11,6 +11,7 @@ namespace Eve.Web
     {
         public static void Main(string[] args)
         {
+            Console.Title = "Eve.Web";
             var host = new WebHostBuilder()
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())

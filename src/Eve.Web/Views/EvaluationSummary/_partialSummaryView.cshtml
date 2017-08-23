@@ -1,0 +1,113 @@
+﻿@{
+    ViewBag.Title = "EvaluationSummary";
+    Layout = null;
+}
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UACompatible" content="=" IE="edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/ie10-viewport-bug-workaround.css" rel="stylesheet" />
+    <link rel="icon" href="~/favicon.ico" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="~/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="~/js/ie-emulation-modes-warning.js"></script>
+</head>
+<body>
+    @Html.Partial("../Shared/_InactiveNavbar")
+    <div class="container">
+        <!--Summary-->
+        <h3>
+            II. Summary of Results
+        </h3>
+
+        <div class="form-group">
+            <table id="table-summary" class="table" border="1">
+                <thead>
+                    <tr>
+                        <th class="col-xs-2" rowspan="2"></th>
+                        <th class="col-xs-1" rowspan="2" style="vertical-align: middle;"><p class="text-center">Weight</p></th>
+                        <th class="col-xs-3" colspan="2"><p class="text-center">System</p></th>
+                        <th class="col-xs-3" colspan="2"><p class="text-center">Supervisor</p></th>
+                        <th class="col-xs-3" rowspan="2" style="vertical-align: middle;"><p class="text-center">Remarks</p></th>
+                    </tr>
+                    <tr>
+                        <th><p class="text-center">Average</p></th>
+                        <th><p class="text-center">Computed</p></th>
+                        <th><p class="text-center">Average</p></th>
+                        <th><p class="text-center">Computed</p></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td style="vertical-align: middle;">Results Leader</td>
+                        <td style="vertical-align: middle;"><p class="text-center">40%</p></td>
+                        <td style="vertical-align: middle;"></td>
+                        <td style="vertical-align: middle;"></td>
+                        <td style="vertical-align: middle;"></td>
+                        <td style="vertical-align: middle;"></td>
+                        <td>
+                            <textarea id="comment-ResultsLeader" class="form-control" rows="5" style="resize:none"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align: middle;">People Leader</td>
+                        <td style="vertical-align: middle;"><p class="text-center">20%</p></td>
+                        <td style="vertical-align: middle;"></td>
+                        <td style="vertical-align: middle;"></td>
+                        <td style="vertical-align: middle;"></td>
+                        <td style="vertical-align: middle;"></td>
+                        <td>
+                            <textarea id="comment-PeopleLeader" class="form-control" rows="5" style="resize:none"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align: middle;">Thought Leader</td>
+                        <td style="vertical-align: middle;"><p class="text-center">30%</p></td>
+                        <td style="vertical-align: middle;"></td>
+                        <td style="vertical-align: middle;"></td>
+                        <td style="vertical-align: middle;"></td>
+                        <td style="vertical-align: middle;"></td>
+                        <td>
+                            <textarea id="comment-ThoughLeader" class="form-control" rows="5" style="resize:none"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align: middle;">Developmental Goals</td>
+                        <td style="vertical-align: middle;"><p class="text-center">10%</p></td>
+                        <td style="vertical-align: middle;"></td>
+                        <td style="vertical-align: middle;"></td>
+                        <td style="vertical-align: middle;"></td>
+                        <td style="vertical-align: middle;"></td>
+                        <td style="vertical-align: middle;">
+                            <textarea id="comment-DevelopmentalGoals" class="form-control" rows="5" style="resize:none"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><p class="text-center">100%</p></td>
+                        <td colspan="2"><p class="text-right">Score</p></td>
+                        <td colspan="2"><p class="text-right">Score</p></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"></td>
+                        <td colspan="2"><p class="text-right">Rating</p></td>
+                        <td colspan="2"><p class="text-right">Rating</p></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-xs-offset-3">
+            <button class="col-xs-3 btn bt-lg btn-primary" onclick="@("window.location.href='" + @Url.Action("NewEvaluation", "FillUpEvaluationForm") + "'");">
+                <span class="glyphicon glyphicon-paste"></span> Submit
+            </button>
+
+            <button class="col-xs-3 col-xs-offset-3 btn bt-lg btn-default" onclick="@("window.location.href='" + @Url.Action("NewEvaluation", "FillUpEvaluationForm") + "'");">
+                <span class="glyphicon glyphicon-circle-arrow-left"></span> Back
+            </button>
+        </div>
+    </div>
+</body>
+<!--end Summary-->

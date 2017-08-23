@@ -1,4 +1,5 @@
-﻿
+﻿@using Eve.Web.ViewModels
+@model FillUpEvaluationFormViewModel
 @{
     ViewBag.Title = "FillUpEvaluationForm";
     Layout = null;
@@ -11,10 +12,29 @@
     <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="~/css/ie10-viewport-bug-workaround.css" rel="stylesheet" />
     <link rel="icon" href="~/favicon.ico" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="~/js/ie10-viewport-bug-workaround.js"></script>
     <script src="~/js/ie-emulation-modes-warning.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".team-role-item").click(function () {
+                var text = $(this).text();
+                var value = $(this).val();
+
+                $('#team-role-span').html(text);
+
+                $('#evaluationFormView div').empty();
+
+                $('#evaluationFormView').load('/FillUpEvaluationForm/LoadEvaluationForm', { jobRoleID: value });
+            });
+
+            $(".review-period-item").click(function () {
+                var text = $(this).text();
+                $('#review-period-span').html(text);
+            });
+        });
+    </script>
 
     <title>Fill-up Form</title>
 </head>
@@ -44,14 +64,14 @@
                 <label for="reviewPeriod" class="col-xs-3 control-label">Review Period</label> <!--Make Dropdown (New Hire 3rd Month Review, New Hire 4th Month Review, Midyear Review, Year-End Review)-->
                 <div class="dropdown col-xs-3">
                     <button id="review-period" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
-                        Select Review Period
+                        <span id="review-period-span">Select Review Period</span>
                         <span class="caret"></span>
                     </button>
                     <ul id="dropdown-review-period" class="dropdown-menu" role="menu" aria-labelledby="review-period">
-                        <li role="presentation" style="cursor:pointer"><a role="menuitem">New Hire 3rd Month Review</a></li>
-                        <li role="presentation" style="cursor:pointer"><a role="menuitem">New Hire 4th Month Review</a></li>
-                        <li role="presentation" style="cursor:pointer"><a role="menuitem">Midyear Review</a></li>
-                        <li role="presentation" style="cursor:pointer"><a role="menuitem">Year-end Review</a></li>
+                        @foreach (var item in Model.Periods)
+                        {
+                            <li class="review-period-item" role="presentation" style="cursor:pointer" value="@item.periodID"><a role="menuitem">@item.period</a></li>
+                        }
                     </ul>
                 </div>
             </div><!--end Name and Review Period-->
@@ -65,22 +85,15 @@
 
                 <label for="currentPosition" class="col-xs-3 control-label">Current Position</label>
                 <div class="dropdown col-xs-3">
-                    <button id="position" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
-                        Select Position
+                    <button id="team-role" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                        <span id="team-role-span">Select Team Role</span>
                         <span class="caret"></span>
                     </button>
-                    <ul id="dropdown-position" class="dropdown-menu" role="menu" aria-labelledby="position">
-                        <li role="presentation" style="cursor:pointer"><a role="menuitem">12 - Individual Contributor</a></li>
-                        <li role="presentation" style="cursor:pointer"><a role="menuitem">11 - Individual Contributor</a></li>
-                        <li role="presentation" style="cursor:pointer"><a role="menuitem">10 - Individual Contributor</a></li>
-                        <li role="presentation" style="cursor:pointer"><a role="menuitem">9 - Individual Contributor</a></li>
-                        <li role="presentation" style="cursor:pointer"><a role="menuitem">9 - Team Lead</a></li>
-                        <li role="presentation" style="cursor:pointer"><a role="menuitem">8 - Sr. Developer</a></li>
-                        <li role="presentation" style="cursor:pointer"><a role="menuitem">8 - Sr. Team Lead</a></li>
-                        <li role="presentation" style="cursor:pointer"><a role="menuitem">8 - Jr. Architect</a></li>
-                        <li role="presentation" style="cursor:pointer"><a role="menuitem">7 - Manager</a></li>
-                        <li role="presentation" style="cursor:pointer"><a role="menuitem">7 - Architect/Manager</a></li>
-                        <li role="presentation" style="cursor:pointer"><a role="menuitem">7 - Architect</a></li>
+                    <ul id="dropdown-team-role" class="dropdown-menu" role="menu" aria-labelledby="team-role">
+                        @foreach (var item in Model.Roles)
+                        {
+                            <li class="team-role-item" role="presentation" style="cursor:pointer" value="@item.jobRoleID"><a role="menuitem">@item.jobRoleLevel - @item.jobRole</a></li>
+                        }
                     </ul>
                 </div>
             </div><!--end Position and Group-->
@@ -117,179 +130,24 @@
             </div><!--End Legend-->
 
             <!--Evaluation-->
-            <h3>
-                I. Evaluation
-            </h3>
-            <h4>
-                A. Results Leader
-            </h4>
-
-            <div class="form-group">
-                <table id="evaluation" class="table" border="1">
-                    <thead>
-                        <tr>
-                            <th class="col-xs-6" rowspan="2"></th>
-                            <th class="col-xs-3" colspan="5"><p class="text-center">Self-Rating</p></th>
-                            <th class="col-xs-3" colspan="5"><p class="text-center">Supervisor's Rating</p></th>
-                        </tr>
-                        <tr>
-                            <th><p class="text-center">4</p></th>
-                            <th><p class="text-center">3</p></th>
-                            <th><p class="text-center">2</p></th>
-                            <th><p class="text-center">1</p></th>
-                            <th><p class="text-center">0</p></th>
-                            <th><p class="text-center">4</p></th>
-                            <th><p class="text-center">3</p></th>
-                            <th><p class="text-center">2</p></th>
-                            <th><p class="text-center">1</p></th>
-                            <th><p class="text-center">0</p></th>
-                        </tr>
-                        <tr>
-                            <!--Category-->
-                            <th colspan="11"><p class="text-uppercase text-center">Accountability</p></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <!--Question-->
-                            <td>Work on defined and standard tasks with occasional guidance from the lead.</td>
-                            <!--Self-->
-                            <td style="vertical-align: middle;">
-                                <p class="text-center"><input type="radio" name="Self-ResultsLeader-Accountablity-1" value="4"></p>
-                            </td>
-                            <td style="vertical-align: middle;">
-                                <p class="text-center"><input type="radio" name="Self-ResultsLeader-Accountablity-1" value="3"></p>
-                            </td>
-                            <td style="vertical-align: middle;">
-                                <p class="text-center"><input type="radio" name="Self-ResultsLeader-Accountablity-1" value="2"></p>
-                            </td>
-                            <td style="vertical-align: middle;">
-                                <p class="text-center"><input type="radio" name="Self-ResultsLeader-Accountablity-1" value="1"></p>
-                            </td>
-                            <td style="vertical-align: middle;">
-                                <p class="text-center"><input type="radio" name="Self-ResultsLeader-Accountablity-1" value="0"></p>
-                            </td>
-
-                            <td style="vertical-align: middle;"><!--Supervisor-->
-                                <p class="text-center"><input type="radio" name="Supervisor-ResultsLeader-Accountablity-1" value="4"></p>
-                            </td>
-                            <td style="vertical-align: middle;">
-                                <p class="text-center"><input type="radio" name="Supervisor-ResultsLeader-Accountablity-1" value="3"></p>
-                            </td>
-                            <td style="vertical-align: middle;">
-                                <p class="text-center"><input type="radio" name="Supervisor-ResultsLeader-Accountablity-1" value="2"></p>
-                            </td>
-                            <td style="vertical-align: middle;">
-                                <p class="text-center"><input type="radio" name="Supervisor-ResultsLeader-Accountablity-1" value="1"></p>
-                            </td>
-                            <td style="vertical-align: middle;">
-                                <p class="text-center"><input type="radio" name="Supervisor-ResultsLeader-Accountablity-1" value="0"></p>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <!--end Evaluation-->
-            </div>
-
-            <!--Summary-->
-            <h3>
-                II. Summary of Results
-            </h3>
-
-            <div class="form-group">
-                <table id="table-summary" class="table" border="1">
-                    <thead>
-                        <tr>
-                            <th class="col-xs-2" rowspan="2"></th>
-                            <th class="col-xs-1" rowspan="2" style="vertical-align: middle;"><p class="text-center">Weight</p></th>
-                            <th class="col-xs-3" colspan="2"><p class="text-center">System</p></th>
-                            <th class="col-xs-3" colspan="2"><p class="text-center">Supervisor</p></th>
-                            <th class="col-xs-3" rowspan="2" style="vertical-align: middle;"><p class="text-center">Remarks</p></th>
-                        </tr>
-                        <tr>
-                            <th><p class="text-center">Average</p></th>
-                            <th><p class="text-center">Computed</p></th>
-                            <th><p class="text-center">Average</p></th>
-                            <th><p class="text-center">Computed</p></th>
-                        </tr>
-                    </thead>
-                    
-                    <tbody>
-                        <tr>
-                            <td style="vertical-align: middle;">Results Leader</td>
-                            <td style="vertical-align: middle;"><p class="text-center">40%</p></td>
-                            <td style="vertical-align: middle;"></td>
-                            <td style="vertical-align: middle;"></td>
-                            <td style="vertical-align: middle;"></td>
-                            <td style="vertical-align: middle;"></td>
-                            <td>
-                                <textarea id="comment-ResultsLeader" class="form-control" rows="5" style="resize:none"></textarea>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="vertical-align: middle;">People Leader</td>
-                            <td style="vertical-align: middle;"><p class="text-center">20%</p></td>
-                            <td style="vertical-align: middle;"></td>
-                            <td style="vertical-align: middle;"></td>
-                            <td style="vertical-align: middle;"></td>
-                            <td style="vertical-align: middle;"></td>
-                            <td>
-                                <textarea id="comment-PeopleLeader" class="form-control" rows="5" style="resize:none"></textarea>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="vertical-align: middle;">Thought Leader</td>
-                            <td style="vertical-align: middle;"><p class="text-center">30%</p></td>
-                            <td style="vertical-align: middle;"></td>
-                            <td style="vertical-align: middle;"></td>
-                            <td style="vertical-align: middle;"></td>
-                            <td style="vertical-align: middle;"></td>
-                            <td>
-                                <textarea id="comment-ThoughLeader" class="form-control" rows="5" style="resize:none"></textarea>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="vertical-align: middle;">Developmental Goals</td>
-                            <td style="vertical-align: middle;"><p class="text-center">10%</p></td>
-                            <td style="vertical-align: middle;"></td>
-                            <td style="vertical-align: middle;"></td>
-                            <td style="vertical-align: middle;"></td>
-                            <td style="vertical-align: middle;"></td>
-                            <td style="vertical-align: middle;">
-                                <textarea id="comment-DevelopmentalGoals" class="form-control" rows="5" style="resize:none"></textarea>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td><p class="text-center">100%</p></td>
-                            <td colspan="2"><p class="text-right">Score</p></td>
-                            <td colspan="2"><p class="text-right">Score</p></td>
-                        </tr>
-                        <tr>
-                            <td colspan="2"></td>
-                            <td colspan="2"><p class="text-right">Rating</p></td>
-                            <td colspan="2"><p class="text-right">Rating</p></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <!--end Summary-->
+            <div id="evaluationFormView"></div>
+            <div id="summaryView"></div>
 
             <hr />
 
-        </form><!--TEMPORARILY, SHOULD BE AFTER BUTTONS-->
-        <!--Buttons-->
-        <div class="col-xs-offset-3">
-            <button class="col-xs-3 btn bt-lg btn-primary">
-                <span class="glyphicon glyphicon-paste"></span> Submit
-            </button>
+            <!--Buttons-->
+            <div class="col-xs-offset-3">
+                <button class="col-xs-3 btn bt-lg btn-primary" onclick="@("window.location.href='" + @Url.Action("EvaluationSummary", "EvaluationSummary") + "'");">
+                    <span class="glyphicon glyphicon-paste"></span> Next
+                </button>
 
-            <button class="col-xs-3 col-xs-offset-3 btn bt-lg btn-default" onclick="@("window.location.href='" + @Url.Action("Summary", "TemplateEvaluationSummary") + "'");">
-                <span class="glyphicon glyphicon-circle-arrow-left"></span> Back
-            </button>
-        </div>
+                <button class="col-xs-3 col-xs-offset-3 btn bt-lg btn-default" onclick="@("window.location.href='" + @Url.Action("Summary", "TemplateEvaluationSummary") + "'");">
+                    <span class="glyphicon glyphicon-circle-arrow-left"></span> Back
+                </button>
+            </div>
+
+        </form>
         <br /><br />
-        <!--end Buttons-->
     </div><!--end Form-->
 </body>
 
