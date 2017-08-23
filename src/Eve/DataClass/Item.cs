@@ -10,8 +10,6 @@ namespace Eve.DataClass
         public int criteriaID { get; set; }
         public int attributeID { get; set; }
         public string item { get; set; }
-
-        //Remove after database has been implemented
         public int jobRoleID { get; set; }
         public Item(int ID, int criteria, int attribute, string item, int jobRoleID)
         {

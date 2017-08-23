@@ -12,7 +12,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eve.Api", "src\Eve.Api\Eve.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tokenserver", "tokenserver", "{03A1168C-9469-4D46-AD9F-12989BAE6679}"
 EndProject
+<<<<<<< HEAD
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Token.Server", "tokenserver\Token.Server\Token.Server.csproj", "{D979436F-BE30-437E-AF5A-746D208A7B4B}"
+=======
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Token.Server", "tokenserver\Token.Server\Token.Server.csproj", "{D979436F-BE30-437E-AF5A-746D208A7B4B}"
+>>>>>>> 09a3d1dea2835774989a0248f410f5eaad550e3c
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -6,13 +6,10 @@ using System.Globalization;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Mvc;
 
-// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace Eve.Web.Controllers
 {
     public class CreateEvaluationFormController : Controller
     {
-        // GET: CreateEvaluationForm
         public ActionResult CreateEvaluationForm()
         {
             return View("CreateEvaluationForm");

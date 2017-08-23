@@ -12,18 +12,13 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using Eve.DataClass;
 
-// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace Eve.Web.Controllers
 {
     public class FillUpEvaluationFormController : Controller
     {
-        // GET: FillUpEvaluation
         public ActionResult NewEvaluation()
         {
             var viewModel = new FillUpEvaluationFormViewModel();
-            //viewModel.Roles = new FillUpEvaluationModel().GetJobRoles();
-            //viewModel.Periods = new FillUpEvaluationModel().GetReviewPeriods();
 
             using (var client = new HttpClient())
             {

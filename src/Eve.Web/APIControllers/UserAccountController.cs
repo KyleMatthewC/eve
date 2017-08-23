@@ -16,8 +16,6 @@ using Newtonsoft.Json;
 using Eve.JWT_Provider;
 using Eve.Models;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace Eve.Web.Controllers
 {
     [Route("api/[controller]")]
@@ -31,7 +29,6 @@ namespace Eve.Web.Controllers
             _options = jwtAccessor.Value;
         }
 
-        // POST
         [AllowAnonymous]
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginViewModel userCredentials)

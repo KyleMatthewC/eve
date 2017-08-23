@@ -13,7 +13,6 @@ namespace Eve.Web.APIControllers
     [Route("api/[controller]")]
     public class EvaluationFormController : Controller
     {
-        // GET: api/values
         [HttpGet]
         [Route("GetRoles")]
         public async Task<IActionResult> GetRoles()
@@ -30,31 +29,12 @@ namespace Eve.Web.APIControllers
             return Ok(list);
         }
 
-        // GET api/values/5
         [HttpGet]
         [Route("GetEvaluationFormItems/{jobRoleID}")]
         public async Task<IActionResult> GetEvaluationFormItems(int jobRoleID)
         {
             IList<CriteriaAttribute> list = new FillUpEvaluationModel().GetCriteriaItems(jobRoleID);
             return Ok(list);
-        }
-
-        // POST api/values
-        [HttpPost]
-        public void Post([FromBody]string value)
-        {
-        }
-
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
         }
     }
 }
